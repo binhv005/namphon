@@ -1,0 +1,371 @@
+/* ==========================================================================
+   NAMPHON HOMESTAY - HUẾ | LUXURY BOUTIQUE EDITORIAL DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Boutique Luxury Color Palette (Matching the sample aesthetic) */
+  --color-teal-dark: #0f271f;
+  --color-teal-primary: #173d30;
+  --color-teal-light: #235443;
+  --color-teal-soft: #e8f0ec;
+
+  --color-sand-dark: #b8a68f;
+  --color-sand-primary: #d7c9b8;
+  --color-sand-light: #f0e9df;
+  --color-sand-pale: #f9f6f1;
+
+  --color-bg-base: #f7f4ee;
+  --color-bg-white: #ffffff;
+  --color-bg-dark: #122820;
+
+  --color-text-main: #1d2521;
+  --color-text-muted: #5e6963;
+  --color-text-light: #8e9a93;
+  --color-text-inverse: #f7f9f7;
+
+  --color-accent-terracotta: #c47c5d;
+  --color-accent-gold: #c29b63;
+
+  --color-border: rgba(29, 37, 33, 0.1);
+  --color-border-dark: rgba(255, 255, 255, 0.15);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(18, 39, 31, 0.05);
+  --shadow-md: 0 10px 30px rgba(18, 39, 31, 0.08);
+  --shadow-lg: 0 20px 45px rgba(18, 39, 31, 0.12);
+  --shadow-float: 0 24px 60px rgba(15, 39, 31, 0.18);
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+p, blockquote, .text-pretty {
+  text-wrap: pretty;
+}
+
+.font-serif {
+  font-family: var(--font-serif) !important;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.container-narrow {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-spacing {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+/* Buttons */
+.btn-boutique {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-teal {
+  background-color: var(--color-teal-primary);
+  color: #ffffff;
+}
+
+.btn-teal:hover {
+  background-color: var(--color-teal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 61, 48, 0.3);
+}
+
+.btn-white-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-white-outline:hover {
+  background-color: #ffffff;
+  color: var(--color-teal-dark);
+}
+
+.btn-dark-outline {
+  background-color: transparent;
+  color: var(--color-teal-dark);
+  border: 1.5px solid var(--color-teal-dark);
+}
+
+.btn-dark-outline:hover {
+  background-color: var(--color-teal-dark);
+  color: #ffffff;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.eyebrow-light {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Floating Booking Bar */
+.hero-booking-bar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 960px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hero-booking-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 14px;
+  }
+}
+
+.booking-input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 14px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 900px) {
+  .booking-input-group {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 8px 0;
+  }
+}
+
+.booking-input-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.booking-input-control {
+  border: none;
+  background: transparent;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  outline: none;
+  width: 100%;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 39, 31, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Hide scrollbar for clean minimal aesthetic */
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent;
+}
+
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-teal-dark);
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--color-accent-gold);
+  animation: fadeIn 0.3s ease;
+  font-size: 0.9rem;
+}
+
+@keyframes pulseGlowRed {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.5); }
+  50% { box-shadow: 0 0 0 14px rgba(229, 57, 53, 0); }
+}
+
+.animate-pulse-glow-red {
+  animation: pulseGlowRed 2.2s infinite;
+}
+
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS (Modern, Soft, Staggered & Zero Layout-Shift)
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translateY(36px);
+}
+
+.reveal-down {
+  transform: translateY(-36px);
+}
+
+.reveal-left {
+  transform: translateX(-44px);
+}
+
+.reveal-right {
+  transform: translateX(44px);
+}
+
+.reveal-scale {
+  transform: scale(0.93) translateY(20px);
+}
+
+/* Activated State */
+.reveal.is-revealed {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-350 { transition-delay: 350ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-450 { transition-delay: 450ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-700 { transition-delay: 700ms; }
+
+
